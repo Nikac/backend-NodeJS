@@ -40,9 +40,5 @@ router.get('/me', auth, async (req, res) => {
    const user = await User.findById(req.user.id).select('-password -__v');
    res.send(user);
 });
-router.get('/sa', async (req, res) => {
-    const user = await User.findById(req.user.id).select('-password -__v');
-    res.send(user);;
-});
 
 module.exports = router;
